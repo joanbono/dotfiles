@@ -35,3 +35,9 @@ Install dependencies:
 ~~~~bash
 sudo aptitude install feh
 ~~~~
+
+## .bash_profile
+
+Not all my `.bash_profile`, but almost the *important* things.
+
+![](https://i.imgur.com/BfrEvyN.png)
