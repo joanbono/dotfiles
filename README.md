@@ -30,7 +30,7 @@ I have not created the file, I've choosen the parts I want from multiple configu
 My `.i3config` configuration file
 I have not created the file, I've choosen the parts I want from multiple configuration files
 
-Install dependencies (**molokai** colorscheme and **VimPlug**
+Install dependencies:
 
 ~~~~bash
 sudo aptitude install feh
