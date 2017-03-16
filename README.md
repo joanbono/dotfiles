@@ -25,6 +25,8 @@ I have not created the file, I've choosen the parts I want from multiple configu
 
 ![](https://i.imgur.com/6s6ZfoG.png)
 
+***
+
 ## .i3config
 
 My `.i3config` configuration file
@@ -36,12 +38,15 @@ Install dependencies:
 sudo aptitude install feh
 ~~~~
 
+***
+
 ## .bash_profile
 
 Not all my `.bash_profile`, but almost the *important* things.
 
 ![](https://i.imgur.com/BfrEvyN.png)
 
+***
 
 ## .radare2rc
 
