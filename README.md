@@ -50,7 +50,8 @@ Not all my `.bash_profile`, but almost the *important* things.
 
 ## .radare2rc
 
-My `.radare2rc` config file
+My `.radare2rc` config file.
+
 Requires [radare2](https://github.com/radare/radare2), obviously.
 
 ![](https://i.imgur.com/WX1bKL8.png)
