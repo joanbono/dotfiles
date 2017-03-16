@@ -41,3 +41,10 @@ sudo aptitude install feh
 Not all my `.bash_profile`, but almost the *important* things.
 
 ![](https://i.imgur.com/BfrEvyN.png)
+
+
+## .radare2rc
+
+Requires [radare2](https://github.com/radare/radare2), obviously.
+
+![](https://i.imgur.com/WX1bKL8.png)
