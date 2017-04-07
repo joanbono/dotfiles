@@ -40,7 +40,7 @@ sudo aptitude install feh
 
 ***
 
-## .bash_profile
+## .bash_profile && .zshrc
 
 Not all my `.bash_profile`, but almost the *important* things.
 
@@ -49,7 +49,6 @@ I use `/bin/bash` as default shell, but **oh-my-zsh** for `Git`:
 ````
 chsh -s /bin/bash
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-sed -i "s/robbyrussell/agnoster/g" ~/.zshrc
 ````
 
 ![](https://i.imgur.com/Ov4hUZp.png)
