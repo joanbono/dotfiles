@@ -29,6 +29,7 @@ export TELEGRAM="/Users/jbono/Downloads/TelegramDesktop"
 export PROXMARK3="/Users/jbono/proxmark3"
 export ICEMARK3="/Users/jbono/icemark3"
 export OPENOCD="/Users/jbono/openocd"
+export GIT="/Users/jbono/Git"
 
 #NORMAL
 PS1='\[\033[01;37m\]\u@MacBook\[\033[01;33m\] [\w]>\[\033[00m\] '
@@ -46,6 +47,7 @@ alias ll="ls -lh"
 alias tiempo=tiempo
 alias ipchk=ipchk
 alias fpath=fullpath
+alias gitshell="cd $GIT && zsh"
 
 test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
 
