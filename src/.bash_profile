@@ -6,7 +6,7 @@ export PATH=$PATH:/usr/local/go/bin
 
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
-
+export EDITOR=vim
 
 #FUNCTIONS
 function ipchk() {
