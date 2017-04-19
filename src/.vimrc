@@ -4,8 +4,6 @@ colorscheme molokai
 "curl -fLo ~/.vim/colors/molokai.vim --create-dirs https://raw.githubusercontent.com/tomasr/molokai/master/colors/molokai.vim
 filetype plugin on
 
-
-
 " PLUGINS Using Vim-PLUG
 " curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 call plug#begin('~/.vim/plugged')
@@ -46,9 +44,25 @@ call plug#end()
 
 "CONFIG
 set number
+"Press F3 to disable the autoindent
+set pastetoggle=<F3>
+
 "Start Powerline-VIM
 let g:Powerline_symbols = 'fancy'
 set guifont=Inconsolata\ for\ Powerline:h14
 set encoding=utf-8
 set termencoding=utf-8
 let g:molokai_termcolors=256
+"Always show Powerline
+set laststatus=2
+" Necessary to show Unicode glyphs
+set encoding=utf-8
+
+"set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Plus\ Nerd\ File\ Types\ Mono\ 12
+set guifont=Powerline\ Extra\ Symbols\ 12
+" https://github.com/powerline/fonts
+let g:airline_left_sep = "\uE0C0"
+let g:airline_right_sep = "\uE0C2"
+
+" set the CN (column number) symbol:
+let g:airline_section_z = airline#section#create(["\uE0A1" . '%{line(".")}' . "\uE0A3" . '%{col(".")}'])
