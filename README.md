@@ -48,10 +48,10 @@ Not all my `.bash_profile`, but almost the *important* things.
 
 I use `/bin/bash` as default shell, but **oh-my-zsh** for `Git`:
 
-````
+~~~~bash
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 chsh -s /bin/bash
-````
+~~~~
 
 ![](https://i.imgur.com/Ov4hUZp.png)
 
