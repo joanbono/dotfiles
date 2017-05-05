@@ -11,6 +11,8 @@ curl -fLo ~/.vim/colors/molokai.vim --create-dirs https://raw.githubusercontent.
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ~~~~
 
+After that, install [PowerLine Extra Symbols](https://github.com/ryanoasis/powerline-extra-symbols).
+
 Then open Vim and do `:PlugInstall`.
 
 ![](https://i.imgur.com/QRHQb1T.png)
@@ -47,8 +49,8 @@ Not all my `.bash_profile`, but almost the *important* things.
 I use `/bin/bash` as default shell, but **oh-my-zsh** for `Git`:
 
 ````
-chsh -s /bin/bash
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+chsh -s /bin/bash
 ````
 
 ![](https://i.imgur.com/Ov4hUZp.png)
