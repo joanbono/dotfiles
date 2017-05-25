@@ -1,8 +1,11 @@
 #PATH=$PATH:/opt/metasploit-framework/bin
 export PATH=$PATH:/opt/metasploit-framework/bin:/Users/jbono/Library/Python/2.7/bin
-
+#MacPorts
+export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
 #Go PATH
 export PATH=$PATH:/usr/local/go/bin
+#vmWare CLI
+export PATH=$PATH:"/Applications/VMware Fusion.app/Contents/Library"
 
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
@@ -51,8 +54,5 @@ alias gitshell="cd $GIT && zsh"
 
 test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
 
-# MacPorts Installer addition on 2017-01-12_at_11:10:45: adding an appropriate PATH variable for use with MacPorts.
-export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
-# Finished adapting your PATH environment variable for use with MacPorts.
 #Python MarkDown Viewer Default theme
 export MDV_THEME=665.9171
