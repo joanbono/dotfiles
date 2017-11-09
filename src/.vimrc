@@ -3,6 +3,8 @@ syntax enable
 colorscheme molokai
 "curl -fLo ~/.vim/colors/molokai.vim --create-dirs https://raw.githubusercontent.com/tomasr/molokai/master/colors/molokai.vim
 filetype plugin on
+set backspace = 2 " Fix backspace in multiple lines vim8.0
+fixdel 
 
 " PLUGINS Using Vim-PLUG
 " curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
