@@ -3,8 +3,11 @@ syntax enable
 colorscheme molokai
 "curl -fLo ~/.vim/colors/molokai.vim --create-dirs https://raw.githubusercontent.com/tomasr/molokai/master/colors/molokai.vim
 filetype plugin on
-set backspace = 2 " Fix backspace in multiple lines vim8.0
-fixdel 
+set backspace=2 " make backspace work like most other programs
+"fixdel
+
+"ADD powerline
+set rtp+=~/Git/powerline/powerline/bindings/vim
 
 " PLUGINS Using Vim-PLUG
 " curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -27,21 +30,19 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'kien/ctrlp.vim'
 "NerdTREE
 Plug 'scrooloose/nerdtree'
-"Powerline for VIM
-Plug 'Lokaltog/vim-powerline'
 Plug 'jistr/vim-nerdtree-tabs'
 "Vim Syntax for PowerShell
 Plug 'PProvost/vim-ps1'
-"Vim Syntax for Golang
-Plug 'fatih/vim-go'
 "Vim syntax for MarkDown
 Plug 'gabrielelana/vim-markdown'
 "Vim Syntax for Yara Rules
-Plug 'yaunj/vim-yara'
+Plug 's3rvac/vim-syntax-yara'
 "Vim Syntax for Snort Rules
 Plug 'sploit/snort-vim'
 "Vim Syntax for Arduino
 Plug 'sudar/vim-arduino-syntax'
+"Retdec outfiles syntax
+Plug 's3rvac/vim-syntax-retdecdsm'
 call plug#end()
 
 "CONFIG
@@ -50,8 +51,8 @@ set number
 set pastetoggle=<F3>
 
 "Start Powerline-VIM
-let g:Powerline_symbols = 'fancy'
-set guifont=Inconsolata\ for\ Powerline:h14
+"let g:Powerline_symbols = 'fancy'
+set guifont=PowerlineSymbols:14
 set encoding=utf-8
 set termencoding=utf-8
 let g:molokai_termcolors=256
@@ -61,10 +62,17 @@ set laststatus=2
 set encoding=utf-8
 
 "set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Plus\ Nerd\ File\ Types\ Mono\ 12
-set guifont=Powerline\ Extra\ Symbols\ 12
+"fc-cache -vf ~/.local/share/fonts/
+set guifont=PowerlineSymbols\ 12
 " https://github.com/powerline/fonts
-let g:airline_left_sep = "\uE0C0"
-let g:airline_right_sep = "\uE0C2"
+let g:airline_theme = "powerlineish"
+let g:airline_left_sep = "\ue0b0"
+let g:airline_right_sep = "\ue0b2"
 
 " set the CN (column number) symbol:
 let g:airline_section_z = airline#section#create(["\uE0A1" . '%{line(".")}' . "\uE0A3" . '%{col(".")}'])
+
+" Consider all .yar/.yara files to be YARA files.
+autocmd BufNewFile,BufRead *.yar,*.yara setlocal filetype=yara
+" Consider *.dsm files as files containing disassembly from the retdec.com
+autocmd BufNewFile,BufRead *.dsm set filetype=retdecdsm
