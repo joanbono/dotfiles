@@ -1,0 +1,86 @@
+source $VIMRUNTIME/vimrc_example.vim
+source $VIMRUNTIME/mswin.vim
+behave mswin
+
+set diffexpr=MyDiff()
+function MyDiff()
+  let opt = '-a --binary '
+  if &diffopt =~ 'icase' | let opt = opt . '-i ' | endif
+  if &diffopt =~ 'iwhite' | let opt = opt . '-b ' | endif
+  let arg1 = v:fname_in
+  if arg1 =~ ' ' | let arg1 = '"' . arg1 . '"' | endif
+  let arg2 = v:fname_new
+  if arg2 =~ ' ' | let arg2 = '"' . arg2 . '"' | endif
+  let arg3 = v:fname_out
+  if arg3 =~ ' ' | let arg3 = '"' . arg3 . '"' | endif
+  if $VIMRUNTIME =~ ' '
+    if &sh =~ '\<cmd'
+      if empty(&shellxquote)
+        let l:shxq_sav = ''
+        set shellxquote&
+      endif
+      let cmd = '"' . $VIMRUNTIME . '\diff"'
+    else
+      let cmd = substitute($VIMRUNTIME, ' ', '" ', '') . '\diff"'
+    endif
+  else
+    let cmd = $VIMRUNTIME . '\diff'
+  endif
+  silent execute '!' . cmd . ' ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3
+  if exists('l:shxq_sav')
+    let &shellxquote=l:shxq_sav
+  endif
+endfunction
+
+set t_Co=256
+set number
+set encoding=utf-8
+set termencoding=utf-8
+let g:molokai_termcolors=256
+"Always show Powerline
+set laststatus=2
+" Necessary to show Unicode glyphs
+set encoding=utf-8
+syntax enable
+colorscheme darkblue
+"curl -fLo ~/.vim/colors/molokai.vim --create-dirs https://raw.githubusercontent.com/tomasr/molokai/master/colors/molokai.vim
+filetype plugin on
+
+call plug#begin('C:\Programs\Vim\vimfiles\plugged')
+Plug 'scrooloose/nerdtree'
+" Vim-Filer. Execute as :VimFiler
+Plug 'Shougo/vimfiler.vim'
+Plug 'Shougo/unite.vim'
+Plug 'chrisbra/csv.vim'
+"Vim Hexeditor
+Plug 'Shougo/vinarise.vim'
+Plug 'fidian/hexmode'
+"Perform HTTP :HTTPClientDoRequest
+Plug 'aquach/vim-http-client'
+"Airline themes
+Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+"Powerline for VIM
+Plug 'Lokaltog/vim-powerline'
+Plug 'jistr/vim-nerdtree-tabs'
+"Vim Syntax for PowerShell
+Plug 'PProvost/vim-ps1'
+"Vim syntax for MarkDown
+Plug 'gabrielelana/vim-markdown'
+"Vim Syntax for Yara Rules
+Plug 'yaunj/vim-yara'
+"Vim Syntax for Snort Rules
+Plug 'sploit/snort-vim'
+"Vim Syntax for Arduino
+Plug 'sudar/vim-arduino-syntax'
+call plug#end()
+
+set pastetoggle=<F3>
+
+set guifont=PowerlineSymbols\ 12
+
+let g:airline_powerline_fonts=1
+let g:airline_theme = "powerlineish"
+let g:airline_left_sep = "\uE0B0"
+let g:airline_right_sep = "\uE0B2"
+let g:airline_section_z = airline#section#create(["\uE0A1" . '%{line(".")}' . "\uE0A3" . '%{col(".")}'])
